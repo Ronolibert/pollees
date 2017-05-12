@@ -15,7 +15,7 @@ const style = {
 class Landing extends Component {
 	state = {
 		question: '',
-		pollOptions: [{value: ''}, {value: ''}, {value: ''}]
+		pollOptions: [{value: '', votes: 0}, {value: '', votes: 0}, {value: '', votes: 0}]
 	}
 
 	handleOptionAmounts = () => {
@@ -46,7 +46,7 @@ class Landing extends Component {
 	}
 
 	addPollOption = () => {
-		const newState = [...this.state.pollOptions, { value: '' }]
+		const newState = [...this.state.pollOptions, { value: '', votes: 0}]
 		this.setState({
 			pollOptions: newState
 		})

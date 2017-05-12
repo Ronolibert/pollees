@@ -7,8 +7,6 @@ module.exports = env => {
   return {
     context: resolve('src'),
     entry: [
-      'webpack-dev-server/client?http://0.0.0.0:8080',
-      'webpack/hot/only-dev-server',
       './index.js'
     ],
     output: {

@@ -8,14 +8,15 @@ const { renderToString } = require('react-dom/server')
 const { StaticRouter } = require('react-router')
 const _ = require('lodash')
 const fs = require('fs')
-const PORT = 10000
+const PORT = 7000
 const baseTemplate = fs.readFileSync('./index.html')
 const template = _.template(baseTemplate)
 const App = require('./src/App').default
 
 const server = express()
 
-server.use('/public', express.static('./public'))
+server.use('/dist', express.static('./dist'))
+
 server.use((req, res) => {
   const context = {}
   const body = renderToString(
